@@ -1,0 +1,11 @@
+.Slides{
+    animation: App-logo-spin infinite alternate-reverse 10s linear;
+}
+
+@keyframes App-logo-spin {
+    0%    { margin-left: 0; }
+    45%    { margin-left: 0; }
+    55%      { margin-left: -100%; }
+    100%      { margin-left: -100%; }
+  }
+  

@@ -1,0 +1,19 @@
+.SideMenu{
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    background: #e5e6e8;
+    transition: all 1s;
+    box-shadow: 0px 5px 10px #adadad;
+}
+
+.ItemLink a {
+    padding-left: 20px;
+    color:gray;
+    text-decoration: none;
+}
+
+.ItemIcon{
+    font-size: 30px;
+    line-height: 35px;
+}

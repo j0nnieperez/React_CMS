@@ -1,0 +1,51 @@
+.SectionTitle{
+    font-family: Adobe;
+    font-size: 15px;
+    display:inline-block;
+}
+
+.InformationPanel{
+    width:60%;
+    height:500px;
+    margin-left:50px;
+    margin-top:80px;
+    border-right: 1px solid gray
+}
+
+.Section{
+    padding-right:80;
+    position:relative;
+    z-index:1,
+}
+
+.SubTitle{
+    font-size:15px; 
+    margin-left:25px;
+    padding:0px; 
+    margin-top:10px;
+}
+
+.SubSection{
+    display: inline-block;
+    background:rgba(255,255,255,0.6);
+    box-shadow:'0px 0px 35px #fff';
+}
+
+.SubSectionText{
+    margin-left:35px;
+    font-family: YuGothL
+}
+
+@font-face {
+    font-family: Adobe;
+    src: url(../fonts/msjh.ttc);
+}
+
+@font-face {
+    font-family: YuGothL;
+    src: url(../fonts/YuGothL.ttc);
+}
+@font-face {
+    font-family: msjhl;
+    src: url(../fonts/msjhl.ttc);
+}
