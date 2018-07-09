@@ -35,17 +35,3 @@
     margin-left:35px;
     font-family: YuGothL
 }
-
-@font-face {
-    font-family: Adobe;
-    src: url(../fonts/msjh.ttc);
-}
-
-@font-face {
-    font-family: YuGothL;
-    src: url(../fonts/YuGothL.ttc);
-}
-@font-face {
-    font-family: msjhl;
-    src: url(../fonts/msjhl.ttc);
-}

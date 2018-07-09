@@ -9,11 +9,11 @@ function basicAuth(user, password) {
 
 const UserModel = {
     Auth(user, pass){
-        console.log(user)
-        console.log(pass)
         let token = basicAuth(user,pass)
-        console.log(token)
         return api.getWhitAuth("users/me", token)
+    },
+    GetToken(user, pass){
+        return basicAuth(user,pass)
     }
 }
 

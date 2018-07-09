@@ -17,14 +17,16 @@ export default class Admin extends Component {
 
     async OnAuth(){
         const valid = await UserModel.Auth(this.state.user, this.state.pass)
-        if(valid.success) this.setState({redirectToReferrer:true}) 
+        if(valid.success){
+            localStorage.setItem("token-auth", UserModel.GetToken(this.state.user, this.state.pass))
+            this.setState({redirectToReferrer:true})
+        }
     }
 
     render(){
-        const { from } = this.props.location.state || { from: { pathname: "/" } };
         const { redirectToReferrer } = this.state;
         if (redirectToReferrer) {
-            return <Redirect to={from} />;
+            return <Redirect to='/login' />;
         }
         return (
             <div style={styles.From} >

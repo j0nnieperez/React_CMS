@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 //import { Link } from 'react-router-dom'
 
-import Slider from '../Components/Home/Slider';
-import HomePosts from '../Components/Home/HomePosts';
+import Slider from '../Components/Common/Slider'
+import HomePosts from '../Components/App/HomePosts'
 import Header from '../Components/Common/Header'
 import Footer from '../Components/Common/Footer'
 
