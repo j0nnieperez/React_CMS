@@ -5,14 +5,14 @@ const baseUrl = production ? urlApiProduction : urlApiTest
 const version = '0.0.1'
 
 const validateStatus = async request => {
-    console.log(request)
+    //console.log(request)
     if(request.status === 200){ 
         const data = await request.json();
         return data;
     }else if(request.status === 401){
         return {
             "success":false,
-            "message":"Contraseña o correo invalido"
+            "message":"Correo o contraseña invalidos"
         }
     } else if(request.status === 500) {
         return {

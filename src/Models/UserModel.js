@@ -12,8 +12,14 @@ const UserModel = {
         let token = basicAuth(user,pass)
         return api.getWhitAuth("users/me", token)
     },
-    GetToken(user, pass){
-        return basicAuth(user,pass)
+    AddUser(){
+        //
+    },
+    UpdateUser(){
+        //
+    },
+    DeleteUser(){
+        //
     }
 }
 

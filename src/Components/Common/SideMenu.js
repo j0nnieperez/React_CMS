@@ -8,7 +8,8 @@ export default class SideMenu extends Component {
         super(props)
         this.state = {
             items:[
-                {name:'Ver Sitio', link:'/'}
+                {name:'Ver Sitio', link:'/'},
+                {name:'Cerrar Sesion', link:'/logout'}
             ],
             show:false
         }

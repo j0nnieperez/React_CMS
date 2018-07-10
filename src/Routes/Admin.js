@@ -12,6 +12,10 @@ export default class Admin extends Component {
         this.handleShowMenu = this.handleShowMenu.bind(this)
     }
 
+    componentWillMount(){
+        //
+    }
+
     handleShowMenu(){
         this.setState({showSideMenu: !this.state.showSideMenu})
     }

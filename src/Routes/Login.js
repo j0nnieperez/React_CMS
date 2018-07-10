@@ -10,36 +10,57 @@ export default class Admin extends Component {
         this.state = {
             user:"",
             pass:"",
-            redirectToReferrer: false
+            redirectToReferrer: false,
+            InvalidPass: false,
+            InvalidMail: false,
+            message:""
         }
         this.OnAuth = this.OnAuth.bind(this)
     }
 
-    async OnAuth(){
-        const valid = await UserModel.Auth(this.state.user, this.state.pass)
-        if(valid.success){
-            localStorage.setItem("token-auth", UserModel.GetToken(this.state.user, this.state.pass))
+    componentWillMount(){
+        const TokenAuth = localStorage.getItem('token-auth');
+        if(TokenAuth !== null){
             this.setState({redirectToReferrer:true})
         }
+    }
+
+    async OnAuth(){
+
+        const valid = await UserModel.Auth(this.state.user, this.state.pass)
+        console.log(valid)
+        if(valid.success){
+            localStorage.setItem("token-auth", valid.TokenAuth)
+            this.setState({redirectToReferrer:true})
+        }else{
+            this.setState({message:valid.message, InvalidMail:true, InvalidPass:true})
+        }
+    }
+
+    _handleKeyPress = (e) => {
+        if (e.key === 'Enter') this.OnAuth()
     }
 
     render(){
         const { redirectToReferrer } = this.state;
         if (redirectToReferrer) {
-            return <Redirect to='/login' />;
+            console.log("redirecting")
+            return <Redirect to='/admin' />;
         }
         return (
             <div style={styles.From} >
                 <img src={Logo.img} alt={Logo.alt} style={styles.Logo}  />
                 <Form>
+                    <p style={styles.ErrorMessage}>{this.state.message}</p>
                     <FormGroup>
                         <Input 
                             type="email" 
                             name="email" 
                             id="email" 
                             value={this.state.user} 
-                            onChange={user => this.setState({user:user.target.value})} 
-                            placeholder="Email" 
+                            onChange={user => this.setState({user:user.target.value, InvalidMail:false})} 
+                            placeholder="Email"
+                            invalid={this.state.InvalidMail}
                             />
                     </FormGroup>
                     <FormGroup>
@@ -49,8 +70,10 @@ export default class Admin extends Component {
                             id="password" 
                             value={this.state.pass} 
                             onSubmit={this.OnAuth}
-                            onChange={pass => this.setState({pass:pass.target.value})} 
+                            onChange={pass => this.setState({pass:pass.target.value, InvalidPass:false})} 
                             placeholder="Contraseña" 
+                            onKeyPress={this._handleKeyPress}
+                            invalid={this.state.InvalidPass}
                         />
                     </FormGroup>
                     <Button color="primary" block onClick={this.OnAuth} >Entrar</Button>
@@ -77,5 +100,9 @@ const styles = {
     Logo:{
         width:"100%",
         marginBottom:50
+    },
+    ErrorMessage:{
+        color:"#f44253",
+        fontSize:12
     }
 }
