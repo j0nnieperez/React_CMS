@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Contact extends Component {
   render() {
     return (
       <div style={styles.Footer} >
-        <a href="./login" >Acceder</a>
+        <Link to="login" >Acceder</Link>
       </div>
     );
   }

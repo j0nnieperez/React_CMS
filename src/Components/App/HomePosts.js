@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { HomePostText } from '../../DefaultText/App'
+import { HomePostText } from '../../Resources/DefaultText/App'
 
 export default class HomePosts extends Component {
     constructor(props){

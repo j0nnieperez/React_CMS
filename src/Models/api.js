@@ -1,6 +1,6 @@
 const production = false
 const urlApiProduction = 'http://35.229.36.127/'
-const urlApiTest = 'http://127.0.0.1:81/api/'
+const urlApiTest = 'http://192.168.1.79:81/api/'
 const baseUrl = production ? urlApiProduction : urlApiTest
 const version = '0.0.1'
 
@@ -8,6 +8,7 @@ const validateStatus = async request => {
     //console.log(request)
     if(request.status === 200){ 
         const data = await request.json();
+        //console.log(data)
         return data;
     }else if(request.status === 401){
         return {
@@ -65,17 +66,17 @@ const api = {
         });
         return validateStatus(request)
     },
-    async postWhitAuth(endpoint, newList) {
+    async postWhitAuth(endpoint, params) {
         let auth = null;
         //auth = await AsyncStorage.getItem('@auth:key');
-        newList.v = version;
+        //params.v = version;
         const request = await fetch(`${baseUrl}${endpoint}`, {
             method: 'POST',
             headers: {
                 "Authorization": auth,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newList)
+            body: JSON.stringify(params)
         });
         return validateStatus(request)
     },

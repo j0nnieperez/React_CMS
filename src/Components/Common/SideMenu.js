@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {MdAddBox} from 'react-icons/lib/md';
 import '../../Resources/css/SideMenu.css'
 import { Link } from 'react-router-dom'
 
@@ -8,8 +7,10 @@ export default class SideMenu extends Component {
         super(props)
         this.state = {
             items:[
-                {name:'Ver Sitio', link:'/'},
-                {name:'Cerrar Sesion', link:'/logout'}
+                {name:'Inicio', link:'/admin', icon: 'icon-home'},
+                {name:'Ver Sitio', link:'/', icon: 'icon-desktop_windows'},
+                {name:'Admin Database', link:'/admin/database', icon: 'icon-storage'},
+                {name:'Cerrar Sesion', link:'/logout', icon:'icon-exit_to_app' }
             ],
             show:false
         }
@@ -24,8 +25,12 @@ export default class SideMenu extends Component {
     render(){
         return (
             <div style={this.state.show?{marginLeft:0}:{marginLeft:'-25%'}} className='SideMenu' >
-                {this.state.items.map(item => (
-                    <p className='ItemLink' > <Link to={item.link} > <MdAddBox className='ItemIcon' /> {item.name} </Link> </p>
+                <div className="SeparateItem"></div>
+                {this.state.items.map((item, index) => (
+                    <Link key={index} className='ItemLink' to={item.link}> 
+                        <span className={item.icon} />
+                        {item.name} 
+                    </Link> 
                 ) )}
             </div>
         )

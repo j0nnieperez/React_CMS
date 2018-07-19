@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import "./Resources/css/App.css"
+import {AccessModel} from './Models'
+import ClientJS from 'clientjs'
 
 import {Home, Tutorials, About, Contact, Admin, Login, LogOut} from './Routes'
 
 class App extends Component {
   render() {
+    try {
+      var client = new ClientJS();
+      AccessModel.NewAccess(client.getResult())
+    } catch (error) {
+      console.log("")      
+    }
     return (
       <Router>
         <div style={{width:'100%', height:'100%'}} className="App">

@@ -3,6 +3,107 @@
     padding:0;
 }
 
+body{
+    background: #f2f4f7 !important;
+}
+
 .MenuItem:hover{
     background: 'gray'
+}
+
+.AdminDatabase{
+    width:100%;
+}
+
+.AdminDatabase .Title{
+    margin-left: 5%;
+    margin-top: 25px;
+    color: #333; 
+}
+.AdminDatabase .TablesFields{
+    margin-left: 10%;
+    margin-top: 25px;
+    color: #333;
+}
+
+.AdminDatabase .TablesFields p{
+    display: inline;
+}
+
+.AdminDatabase .DatabaseInfo{
+    padding: 25px;
+    border:1px solid #bbb; 
+}
+
+.Father{
+    background: #fff;
+    box-shadow: 0px 2px 5px #ddd;
+    border-radius: 5px;
+}
+
+.AdminDatabase .DatabaseName{
+    color:#aaa
+}
+
+.AdminDatabase .AddTable span {
+    font-size: 100px;
+}
+
+.AdminDatabase .AddTable button {
+    margin: 18%;
+}
+
+.AdminDatabase .card {
+    margin: 0px;
+}
+
+.TableData{
+    width: 100%;
+}
+
+.TableData .button{
+    display: inline-block;
+}
+
+.TableDataTitle{
+    display: inline-block;
+    margin: 15px 20px;
+    text-transform: uppercase;
+}
+
+.TableData .container{
+    margin-top: 20px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.TableData .tableContent{
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+
+.TableData thead{
+    background: #4286f4;
+    border-color: #4286f4;
+    color:#fff;
+    border-radius: 5px;
+}
+
+.TableData .countRows{
+    display: inline-block;
+}
+
+.TableData .BtnAddRow{
+    float: right;
+    margin-top: 15px;
+}
+
+.TableDataHeader{
+    border-bottom: 1px solid #bbb;
+}
+
+.TableData tbody{
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border:1px solid gray;
 }
